@@ -1,48 +1,35 @@
 import React, { Component } from 'react'
-import {AppBar, Card} from '@material-ui/core';
+import {AppBar, Grid, makeStyles} from '@material-ui/core';
 import styled from 'styled-components';
+import axios from 'axios';
+const AppBarTerm = styled.h1``;
 
-const HeadingLeft = styled.span`
-    margin-left:1%;
-    color : black;
-    font-style: normal;
-    font-weight:bold;
-    color:#FF6347;
-    font-family: 'Roboto', sans-serif;
-    width: 50%;
-    background-color: pink;
-
-`;
-const HeadingRight = styled.span`
-    margin-left:90%;
-    margin-right:1%;
-    color : black;
-    font-style: normal;
-    font-weight:bold;
-    color:#FF6347;
-    font-family: 'Roboto', sans-serif;
-    background-color: red;
-    height: -50%;
-`;
 class toppart extends Component {
     constructor(props) {
         super(props)
         
         this.state = {
-             time : '10'
+             time : [],
         }
     }
-    
+    componentDidMount(){
+        axios.get('http://worldtimeapi.org/api/timezone/America/Chicago').then(res => {
+            this.setState({
+                time : res.data});
+        });
+    }
     render() {
         return (
-            <div>
-                <Card color="transparent" position="fixed">
-                    <HeadingLeft> Karun Dawadi</HeadingLeft>
-                </Card>
-                <Card color="transparent" position="fixed">
-                    <HeadingRight> Time Ola</HeadingRight>
-                </Card>
-            </div>
+        <AppBar color='secondary'>
+            <Grid container spacing={10}>
+                <Grid item xs={6}>
+                    <h1>Karun Dawadi</h1>
+                </Grid>
+                <Grid item xs={6}>
+                    <h1>Ola</h1>
+                </Grid>
+            </Grid>
+        </AppBar>       
         )
     }
 }
