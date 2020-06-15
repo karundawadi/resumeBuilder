@@ -1,35 +1,47 @@
-import React, { Component } from 'react'
-import {AppBar, Grid, makeStyles} from '@material-ui/core';
-import styled from 'styled-components';
-import axios from 'axios';
-const AppBarTerm = styled.h1``;
+import React, { Component } from 'react';
+import {AppBar, makeStyles} from '@material-ui/core'
 
 class toppart extends Component {
     constructor(props) {
         super(props)
-        
+    
         this.state = {
-             time : [],
+             samaya : '',
         }
     }
-    componentDidMount(){
-        axios.get('http://worldtimeapi.org/api/timezone/America/Chicago').then(res => {
-            this.setState({
-                time : res.data});
-        });
-    }
+    value = setInterval(() => {
+        let today = new Date();
+        let time = today.getHours() + ":" + today.getMinutes()+":"+today.getSeconds();
+        this.setState(previousState=>({
+            samaya : time,
+        }))
+    }, 1000);
+    stylesDiv = {
+        color :"red",
+        backgroundColor : "pink",
+        marginTop : "0%",
+        borderTop: "0%",
+        paddingTop:"0%",
+        height: "10%",
+    };
+    userStyles = makeStyles({
+        root:{
+            background: 'red',
+            border: 1,
+        }
+    })
+    spanStyle = {
+        paddingLeft : "40%",
+    };
     render() {
+        const classes = this.userStyles();
         return (
-        <AppBar color='secondary'>
-            <Grid container spacing={10}>
-                <Grid item xs={6}>
-                    <h1>Karun Dawadi</h1>
-                </Grid>
-                <Grid item xs={6}>
-                    <h1>Ola</h1>
-                </Grid>
-            </Grid>
-        </AppBar>       
+            <AppBar position="fixed" color="secondary" className={classes.root}>
+            <div>
+            <span> Karun Dawadi</span>
+            <span style={this.spanStyle}>{this.state.samaya}</span>
+            </div>
+            </AppBar>
         )
     }
 }
