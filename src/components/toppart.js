@@ -2,6 +2,7 @@ import React from 'react'
 import {SocialIcon} from 'react-social-icons';
 import {IoIosMail} from 'react-icons/io'
 
+
 const topBarStyle = {
   position: 'absolute',
   top: 0,
@@ -11,9 +12,9 @@ const topBarStyle = {
   fontFamily: 'Roboto ,sans-serif',
   display : 'flex',
   flexDirection: 'row',
-  spaceBetween: '10px',
+  spaceBetween: '1em',
   color: 'black',
-  boxShadow:'3px 8px #DDDDDD',
+  boxShadow:'0.0em 0.5em #DDDDDD',
 }
 
 function toppart() {
@@ -29,19 +30,19 @@ function toppart() {
                 }
                 //Edit subject and body here 
             } onClick={()=>{window.open('mailto:karundawadi00@gmaill.com?subject=subject&body=body')}}><IoIosMail size="3em"/></span>
-            <h3 style={{
+            <h2 style={{
                 textAlign:'center',
                 paddingLeft: '15%',
-                width:'15%',
+                width:'20%',
             }}>
                 Personal website
-            </h3>
+            </h2>
             <div style={{
                 alignContent:'right',
-                paddingLeft:'9%',
+                paddingLeft:'15%',
                 width:'35%',
                 height:'parent',
-                paddingTop:'0.25%',
+                paddingTop:'1.5%',
             }}>
                  <SocialIcon url="https://twitter.com/dawadikarun" />
                  <SocialIcon url="https://www.linkedin.com/in/karundawadi/" />
