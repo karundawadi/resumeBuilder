@@ -42,7 +42,8 @@ function toppart() {
                 paddingLeft:'15%',
                 width:'35%',
                 height:'parent',
-                paddingTop:'1.5%',
+                paddingTop:'0.5%',
+                paddingBottom:'0.5%',
             }}>
                  <SocialIcon url="https://twitter.com/dawadikarun" />
                  <SocialIcon url="https://www.linkedin.com/in/karundawadi/" />
