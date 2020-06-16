@@ -1,49 +1,53 @@
-import React, { Component } from 'react';
-import {AppBar, makeStyles} from '@material-ui/core'
+import React from 'react'
+import {SocialIcon} from 'react-social-icons';
+import {IoIosMail} from 'react-icons/io'
 
-class toppart extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             samaya : '',
-        }
-    }
-    value = setInterval(() => {
-        let today = new Date();
-        let time = today.getHours() + ":" + today.getMinutes()+":"+today.getSeconds();
-        this.setState(previousState=>({
-            samaya : time,
-        }))
-    }, 1000);
-    stylesDiv = {
-        color :"red",
-        backgroundColor : "pink",
-        marginTop : "0%",
-        borderTop: "0%",
-        paddingTop:"0%",
-        height: "10%",
-    };
-    userStyles = makeStyles({
-        root:{
-            background: 'red',
-            border: 1,
-        }
-    })
-    spanStyle = {
-        paddingLeft : "40%",
-    };
-    render() {
-        const classes = this.userStyles();
-        return (
-            <AppBar position="fixed" color="secondary" className={classes.root}>
-            <div>
-            <span> Karun Dawadi</span>
-            <span style={this.spanStyle}>{this.state.samaya}</span>
-            </div>
-            </AppBar>
-        )
-    }
+const topBarStyle = {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  backgroundColor : '',
+  fontFamily: 'Roboto ,sans-serif',
+  display : 'flex',
+  flexDirection: 'row',
+  spaceBetween: '10px',
+  color: 'black',
+  boxShadow:'3px 8px #DDDDDD',
 }
 
+function toppart() {
+    return (
+        <div className='TopBar' style={topBarStyle}>
+            <span style={
+               {
+                    textAlign:'center',
+                    paddingLeft: '9%',
+                    width:'11%',
+                    paddingTop:'0.8%',
+                    height:'parent'
+                }
+                //Edit subject and body here 
+            } onClick={()=>{window.open('mailto:karundawadi00@gmaill.com?subject=subject&body=body')}}><IoIosMail size="3em"/></span>
+            <h3 style={{
+                textAlign:'center',
+                paddingLeft: '15%',
+                width:'15%',
+            }}>
+                Personal website
+            </h3>
+            <div style={{
+                alignContent:'right',
+                paddingLeft:'9%',
+                width:'35%',
+                height:'parent',
+                paddingTop:'0.25%',
+            }}>
+                 <SocialIcon url="https://twitter.com/dawadikarun" />
+                 <SocialIcon url="https://www.linkedin.com/in/karundawadi/" />
+                 <SocialIcon url="https://github.com/karundawadi"/>
+            </div>
+        </div>
+    )
+}
 export default toppart

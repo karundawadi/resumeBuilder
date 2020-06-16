@@ -1,11 +1,12 @@
 import React from 'react';
-import TopPart from './toppart'
+import TopPart from './toppart';
+
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
       <TopPart/>
-    </div>
+    </React.Fragment>
   );
 }
 
