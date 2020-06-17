@@ -15,6 +15,8 @@ const customStyleForModal = {
     }
 }
 
+Modal.setAppElement('body')
+
 class PopUpPart extends React.Component {
     constructor (props) {
       super(props);
@@ -36,7 +38,7 @@ class PopUpPart extends React.Component {
       console.log(this.state.userDetails)
       this.props.onChange(false)
     }
-    
+
     render () {
       return (
         <div>
@@ -44,7 +46,16 @@ class PopUpPart extends React.Component {
              isOpen={this.state.showModal}
           >
             <FormControl>
-                    <TextField id="firstName" label="First Name" onChange={e=>this.setState({...this.state.userDetails, firstName: e.target.value })}/>
+                    <TextField id="firstName" value = {this.state.userDetails.firstName} label="First Name" onChange={
+                      (e)=>{
+                        var items = Object.assign({},this.state.userDetails,{"firstName":`${e.target.value}`})
+                        this.setState({
+                          userDetails : items
+                        },()=>{
+                          console.log(this.state.userDetails.firstName)
+                        })
+                      }
+                    }/>
                     <TextField id="lastName" label="Last Name" onChange={e=>this.setState({...this.state.userDetails, lastName: e.target.value })}/>
                     <TextField id="education" label="Education" onChange={e=>this.setState({...this.state.userDetails, education: e.target.value })}/>
                     <TextField id="qualification" label="Qualification" onChange={e=>this.setState({...this.state.userDetails, qualification: e.target.value })}/>
@@ -55,5 +66,6 @@ class PopUpPart extends React.Component {
       );
     }
   }
+  
 
 export default PopUpPart
