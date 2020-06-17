@@ -6,9 +6,13 @@ import PopUpPart from './components/popuppart'
 
 function App() {
   const [displayPopUp,changeValue] = useState(true)
+
+  function handleChange(newValue){
+    changeValue(newValue)
+  }
   return (
       <React.Fragment>
-      <PopUpPart changePopUpCondition = {changeValue} currentState = {displayPopUp}/>
+      <PopUpPart onChange = {handleChange} currentState = {displayPopUp}/>
       <TopPart/>
       <BodyPart/>
       <BottomPart/>

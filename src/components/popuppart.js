@@ -1,20 +1,59 @@
-import React,{useEffect} from 'react'
+import React,{useState} from 'react'
 import {makeStyles} from '@material-ui/core/styles'
+import {FormControl, InputLabel, TextField} from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
-import PopUp from 'reactjs-popup'
+import Modal from 'react-modal'
+import App from '../App' 
 
-function PopUpPart(props) {
-    const change = ()=>{
-        props.changePopUpCondition(false);
-    }
-    if(props.currentState){
-        return(
-            <React.Fragment>
-                
-            </React.Fragment>
-        )
+const customStyleForModal = {
+    content:{
+        top: '100%',
+        left: '100%',
+        right: '100%',
+        bottom: '100%',
     }
 }
+
+class PopUpPart extends React.Component {
+    constructor (props) {
+      super(props);
+      this.state = {
+        showModal: this.props.currentState,
+        userDetails: {
+            firstName : '',
+            lastName : '',
+            education: '',
+            qualification: '',
+        }
+      };
+      
+      this.handleCloseModal = this.handleCloseModal.bind(this)
+    }
+    
+    handleCloseModal () {
+      this.setState({ showModal: false })
+      console.log(this.state.userDetails)
+      this.props.onChange(false)
+    }
+    
+    render () {
+      return (
+        <div>
+          <Modal 
+             isOpen={this.state.showModal}
+          >
+            <FormControl>
+                    <TextField id="firstName" label="First Name" onChange={e=>this.setState({...this.state.userDetails, firstName: e.target.value })}/>
+                    <TextField id="lastName" label="Last Name" onChange={e=>this.setState({...this.state.userDetails, lastName: e.target.value })}/>
+                    <TextField id="education" label="Education" onChange={e=>this.setState({...this.state.userDetails, education: e.target.value })}/>
+                    <TextField id="qualification" label="Qualification" onChange={e=>this.setState({...this.state.userDetails, qualification: e.target.value })}/>
+                    <button onClick={this.handleCloseModal}>Sumbit</button>
+                </FormControl>
+          </Modal>
+        </div>
+      );
+    }
+  }
 
 export default PopUpPart
