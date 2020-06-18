@@ -35,7 +35,7 @@ function toppart(props) {
                 paddingLeft: '15%',
                 width:'20%',
             }}>
-                {props.userDetailsTransferred.firstName}
+                {props.userDetailsTransferred.firstName+' '+props.userDetailsTransferred.lastName}
             </h2>
             <div style={{
                 alignContent:'right',
