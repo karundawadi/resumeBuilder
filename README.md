@@ -1,2 +1,2 @@
-# Personal Website 
-- Create beautiful CV website by filling a simple form. 
+# Resume Builder
+- Create a simple resume website which can be saved on pdf by filling out a simple form. 
