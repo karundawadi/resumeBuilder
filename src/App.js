@@ -6,9 +6,12 @@ import PopUpPart from './components/popuppart'
 
 function App() {
   const [displayPopUp,changeValue] = useState(true)
+  const [userDetails,changeUserDetails] = useState({'':''})
 
-  function handleChange(newValue){
+  function handleChange(newValue,newUserDetails){
     changeValue(newValue)
+    changeUserDetails(newUserDetails)
+    console.log(newUserDetails)
   }
   return (
       <React.Fragment>

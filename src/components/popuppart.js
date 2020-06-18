@@ -25,8 +25,6 @@ class PopUpPart extends React.Component {
         userDetails: {
             firstName : '',
             lastName : '',
-            education: '',
-            qualification: '',
         }
       };
       
@@ -36,7 +34,7 @@ class PopUpPart extends React.Component {
     handleCloseModal () {
       this.setState({ showModal: false })
       console.log(this.state.userDetails)
-      this.props.onChange(false)
+      this.props.onChange(false,this.state.userDetails)
     }
 
     render () {
@@ -45,8 +43,10 @@ class PopUpPart extends React.Component {
           <Modal 
              isOpen={this.state.showModal}
           >
-            <FormControl>
-                    <TextField id="firstName" value = {this.state.userDetails.firstName} label="First Name" onChange={
+                <Grid container spacing={3}>
+                  {/* First Name */}
+                  <Grid item xs={4}>
+                  <TextField id="firstName" value = {this.state.userDetails.firstName} label="First Name" onChange={
                       (e)=>{
                         var items = Object.assign({},this.state.userDetails,{"firstName":`${e.target.value}`})
                         this.setState({
@@ -56,11 +56,23 @@ class PopUpPart extends React.Component {
                         })
                       }
                     }/>
-                    <TextField id="lastName" label="Last Name" onChange={e=>this.setState({...this.state.userDetails, lastName: e.target.value })}/>
-                    <TextField id="education" label="Education" onChange={e=>this.setState({...this.state.userDetails, education: e.target.value })}/>
-                    <TextField id="qualification" label="Qualification" onChange={e=>this.setState({...this.state.userDetails, qualification: e.target.value })}/>
+                  </Grid>
+                  {/* :Last Name */}
+                  <Grid item xs={4}>
+                  <TextField id="lastName" value = {this.state.userDetails.lastName} label="Last Name" onChange={
+                      (e)=>{
+                        var items = Object.assign({},this.state.userDetails,{"lastName":`${e.target.value}`})
+                        this.setState({
+                          userDetails : items
+                        },()=>{
+                        })
+                      }
+                    }/>
+                  </Grid>
+                  <Grid item xs={4}>
                     <button onClick={this.handleCloseModal}>Sumbit</button>
-                </FormControl>
+                  </Grid>
+                </Grid>
           </Modal>
         </div>
       );
