@@ -7,9 +7,9 @@ import Paper from '@material-ui/core/Paper'
 function renderfrompdf() {
     return (
         <div>
-            <Grid xs={12}>
-            <button>Working on it </button>
-            </Grid>
+            <button onClick={()=>{
+                alert("Working on it!!");
+            }}>Create PDF</button>
         </div>
     )
 }
