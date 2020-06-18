@@ -14,68 +14,67 @@ const useStyles = makeStyles((theme)=>({
     }
 }));
 
-function BodyPart() {
+function BodyPart(props) {
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <Paper>
-                        <h3>Context</h3>
+                        <h3>{props.userDetailsTransferred.currentSchool}</h3>
                         <ul>
-                            <li>Another one</li>
-                            <li>Heer</li>
-                            <li>Third</li>
+                            <li>{props.userDetailsTransferred.currentGPA}</li>
+                            <li>{props.userDetailsTransferred.currentMajor}</li>
                         </ul>
                     </Paper>
                 </Grid>
                 <Grid item xs={6}>
                     <Paper>
-                        <h3>Context</h3>
+                        <h3>{props.userDetailsTransferred.currentWork}</h3>
                         <ul>
-                            <li>Another one</li>
-                            <li>Heer</li>
-                            <li>Third</li>
+                            <li>{props.userDetailsTransferred.featureOneAboutCurrentWork}</li>
+                            <li>{props.userDetailsTransferred.featureTwoAboutCurrentWork}</li>
+                            <li>{props.userDetailsTransferred.featureThreeAboutCurrentWork}</li>
                         </ul>
                     </Paper>
                 </Grid>
                 <Grid item xs = {6}>
                 <Paper>
-                        <h3>Context</h3>
+                        <h3>{props.userDetailsTransferred.previousWork}</h3>
                         <ul>
-                            <li>Another one</li>
-                            <li>Heer</li>
-                            <li>Third</li>
+                            <li>{props.userDetailsTransferred.featureOneAboutPreviousWork}</li>
+                            <li>{props.userDetailsTransferred.featureTwoAboutPreviousWork}</li>
+                            <li>{props.userDetailsTransferred.featureThreeAboutPreviousWork}</li>
                         </ul>
                     </Paper>
                 </Grid>
                 <Grid item xs = {6}>
                 <Paper>
-                        <h3>Context</h3>
+                        <h3>{props.userDetailsTransferred.projectOne}</h3>
                         <ul>
-                            <li>Another one</li>
-                            <li>Heer</li>
-                            <li>Third</li>
+                            <li>{props.userDetailsTransferred.projectOneFirstDescription}</li>
+                            <li>{props.userDetailsTransferred.projectOneSecondDescription}</li>
+                            <li>{props.userDetailsTransferred.projectOneThirdDescription}</li>
                         </ul>
                     </Paper>
                 </Grid>
                 <Grid item xs = {6}>
                 <Paper>
-                        <h3>Context</h3>
+                        <h3>Courses</h3>
                         <ul>
-                            <li>Another one</li>
-                            <li>Heer</li>
-                            <li>Third</li>
+                            <li>{props.userDetailsTransferred.courseImportantOne}</li>
+                            <li>{props.userDetailsTransferred.courseImportantTwo}</li>
+                            <li>{props.userDetailsTransferred.courseImportantThree}</li>
                         </ul>
                     </Paper>
                 </Grid>
                 <Grid item xs = {12}>
                 <Paper>
-                        <h3>Context</h3>
+                        <h3>Softwares Known</h3>
                         <ul>
-                            <li>Another one</li>
-                            <li>Heer</li>
-                            <li>Third</li>
+                            <li>{props.userDetailsTransferred.softawareOneKnown}</li>
+                            <li>{props.userDetailsTransferred.softawareTwoKnown}</li>
+                            <li>{props.userDetailsTransferred.softawareThreeKnown}</li>
                         </ul>
                     </Paper>
                 </Grid>

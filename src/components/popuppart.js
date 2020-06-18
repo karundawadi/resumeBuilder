@@ -4,7 +4,6 @@ import {FormControl, InputLabel, TextField} from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Modal from 'react-modal'
-import App from '../App' 
 
 const customStyleForModal = {
     content:{
@@ -31,6 +30,7 @@ class PopUpPart extends React.Component {
             mailingEmail: '',
             currentSchool: '',
             currentGPA: '',
+            currentMajor:'',
             currentWork: '',
             featureOneAboutCurrentWork: '',
             featureTwoAboutCurrentWork: '',
@@ -63,6 +63,7 @@ class PopUpPart extends React.Component {
     render () {
       return (
         <div>
+          <FormControl>
           <Modal 
              isOpen={this.state.showModal}
           >
@@ -121,6 +122,17 @@ class PopUpPart extends React.Component {
                     <TextField id="currentSchool" value = {this.state.userDetails.currentSchool} label="Current School" onChange={
                       (e)=>{
                         var items = Object.assign({},this.state.userDetails,{"currentSchool":`${e.target.value}`})
+                        this.setState({
+                          userDetails : items
+                        },()=>{
+                        })
+                      }
+                    }/>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <TextField id="currentMajor" value = {this.state.userDetails.currentMajor} label="Current Major" onChange={
+                      (e)=>{
+                        var items = Object.assign({},this.state.userDetails,{"currentMajor":`${e.target.value}`})
                         this.setState({
                           userDetails : items
                         },()=>{
@@ -405,6 +417,7 @@ class PopUpPart extends React.Component {
                   </Grid>
                 </Grid>
           </Modal>
+          </FormControl>
         </div>
       );
     }
