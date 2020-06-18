@@ -1,8 +1,6 @@
-import React,{useState} from 'react';
-import TopPart from './components/toppart';
-import BodyPart from './components/bodypart';
+import React,{useState} from 'react'
+import BodyPart from './components/bodypart'
 import PopUpPart from './components/popuppart'
-import RenderToPdf from './components/renderfrompdf'
 
 function App() {
   const [displayPopUp,changeValue] = useState(true)
@@ -15,9 +13,7 @@ function App() {
   return (
       <React.Fragment>
       <PopUpPart onChange = {handleChange} currentState = {displayPopUp}/>
-      <TopPart userDetailsTransferred={userDetails}/>
       <BodyPart userDetailsTransferred={userDetails}/>
-      <RenderToPdf/>
     </React.Fragment>
   );
 }

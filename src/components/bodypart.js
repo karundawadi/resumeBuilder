@@ -2,6 +2,8 @@ import React from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
+import TopPart from './toppart'
+import Pdf from 'react-to-pdf' 
 
 const useStyles = makeStyles((theme)=>({
     root:{
@@ -10,14 +12,18 @@ const useStyles = makeStyles((theme)=>({
         marginTop:'1em',
         paddingTop:'5em',
         paddingLeft:'0.5em',
-        paddingRight:'0.5em',
+        paddingRight:'0.5em'
     }
 }));
+
+const ref = React.createRef();
 
 function BodyPart(props) {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <React.Fragment>
+        <div ref={ref} className={classes.root}>
+            <TopPart userDetailsTransferred={props.userDetailsTransferred}/>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <Paper>
@@ -80,6 +86,12 @@ function BodyPart(props) {
                 </Grid>
             </Grid>
         </div>
+        <Pdf targetRef={ref} filename="resume.pdf">
+                    {({toPdf})=> (
+                        <button onClick={toPdf}>Generarte pdf</button>
+                    )}
+        </Pdf>
+        </React.Fragment>
     )
 }
 

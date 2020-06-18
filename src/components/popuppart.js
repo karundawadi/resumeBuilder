@@ -21,6 +21,7 @@ class PopUpPart extends React.Component {
       super(props);
       this.state = {
         showModal: this.props.currentState,
+        displayAlert: true,
         userDetails: {
             firstName : '',
             lastName : '',
@@ -59,7 +60,9 @@ class PopUpPart extends React.Component {
       this.setState({ showModal: false })
       this.props.onChange(false,this.state.userDetails)
     }
-
+    componentDidMount(){
+      alert("Please fill out the form")
+    }
     render () {
       return (
         <div>
@@ -72,6 +75,7 @@ class PopUpPart extends React.Component {
                   <Grid item xs={4}>
                     <TextField id="firstName" value = {this.state.userDetails.firstName} label="First Name" onChange={
                       (e)=>{
+                        this.setState(this.displayAlert = false)
                         var items = Object.assign({},this.state.userDetails,{"firstName":`${e.target.value}`})
                         this.setState({
                           userDetails : items
