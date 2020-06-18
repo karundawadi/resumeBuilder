@@ -17,7 +17,7 @@ const topBarStyle = {
   boxShadow:'0.0em 0.5em #DDDDDD',
 }
 
-function toppart() {
+function toppart(props) {
     return (
         <div className='TopBar' style={topBarStyle}>
             <span style={
@@ -35,7 +35,7 @@ function toppart() {
                 paddingLeft: '15%',
                 width:'20%',
             }}>
-                Personal website
+                {props.userDetailsTransferred.firstName}
             </h2>
             <div style={{
                 alignContent:'right',

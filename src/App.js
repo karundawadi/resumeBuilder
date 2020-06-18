@@ -10,13 +10,12 @@ function App() {
   function handleChange(newValue,newUserDetails){
     changeValue(newValue)
     changeUserDetails(newUserDetails)
-    console.log(newUserDetails)
   }
   return (
       <React.Fragment>
       <PopUpPart onChange = {handleChange} currentState = {displayPopUp}/>
-      <TopPart/>
-      <BodyPart/>
+      <TopPart userDetailsTransferred={userDetails}/>
+      <BodyPart userDetailsTransferred={userDetails}/>
     </React.Fragment>
   );
 }
