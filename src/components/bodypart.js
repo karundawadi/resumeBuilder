@@ -27,7 +27,9 @@ function BodyPart(props) {
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <Paper>
-                        <h3>{props.userDetailsTransferred.currentSchool}</h3>
+                        <h3>
+                            Working on it 
+                        </h3>
                         <ul>
                             <li>{props.userDetailsTransferred.currentGPA}</li>
                             <li>{props.userDetailsTransferred.currentMajor}</li>

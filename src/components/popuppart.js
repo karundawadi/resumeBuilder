@@ -3,6 +3,7 @@ import {makeStyles} from '@material-ui/core/styles'
 import {FormControl, InputLabel, TextField} from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
+import Button from '@material-ui/core/Button'
 import Modal from 'react-modal'
 
 const customStyleForModal = {
@@ -61,21 +62,23 @@ class PopUpPart extends React.Component {
       this.props.onChange(false,this.state.userDetails)
     }
     componentDidMount(){
-      alert("Please fill out the form")
+      //alert("Please fill out the form")
     }
     render () {
       return (
         <div>
-          <FormControl>
+          <FormControl color="secondary">
           <Modal 
              isOpen={this.state.showModal}
           >
                 <Grid container spacing={1}>
                   {/* First Name */}
+                  <Grid item xs={12}>
+                    <h3>Personal Information</h3>
+                  </Grid>
                   <Grid item xs={4}>
                     <TextField id="firstName" value = {this.state.userDetails.firstName} label="First Name" onChange={
                       (e)=>{
-                        this.setState(this.displayAlert = false)
                         var items = Object.assign({},this.state.userDetails,{"firstName":`${e.target.value}`})
                         this.setState({
                           userDetails : items
@@ -110,6 +113,7 @@ class PopUpPart extends React.Component {
                   </Grid>
                   <Grid xs={12}>
                       <br></br>
+                      <h3>School Information</h3>
                   </Grid>
                   <Grid item xs={4}>
                     <TextField id="currentGPA" value = {this.state.userDetails.currentGPA} label="Current GPA" onChange={
@@ -146,6 +150,7 @@ class PopUpPart extends React.Component {
                   </Grid>
                   <Grid xs={12}>
                       <br></br>
+                      <h3>Social Media</h3>
                   </Grid>
                   <Grid item xs={4}>
                     <TextField id="twitterUrl" value = {this.state.userDetails.twitterUrl} label="Twitter Url" onChange={
@@ -182,6 +187,7 @@ class PopUpPart extends React.Component {
                   </Grid>
                   <Grid xs={12}>
                       <br></br>
+                      <h3>Current Work</h3>
                   </Grid>
                   <Grid item xs={4}>
                     <TextField id="currentWork" value = {this.state.userDetails.currentWork} label="Current Work" onChange={
@@ -235,6 +241,7 @@ class PopUpPart extends React.Component {
                   </Grid>
                   <Grid xs={12}>
                       <br></br>
+                      <h3>Previous work</h3>
                   </Grid>
                   <Grid item xs={4}>
                     <TextField id="previousWork" value = {this.state.userDetails.previousWork} label="Previous Work" onChange={
@@ -288,6 +295,7 @@ class PopUpPart extends React.Component {
                   </Grid>
                   <Grid xs={12}>
                       <br></br>
+                      <h3>Projects</h3>
                   </Grid>
                   <Grid item xs={4}>
                     <TextField id="projectOne" value = {this.state.userDetails.projectOne} label="Project" onChange={
@@ -341,6 +349,7 @@ class PopUpPart extends React.Component {
                   </Grid>
                   <Grid xs={12}>
                       <br></br>
+                      <h3>Important courses</h3>
                   </Grid>
                   <Grid item xs={4}>
                     <TextField id="courseImportantOne" value = {this.state.userDetails.courseImportantOne} label="Course 1" onChange={
@@ -417,7 +426,7 @@ class PopUpPart extends React.Component {
                   <Grid xs={5}>
                   </Grid>
                   <Grid item xs={4}>
-                    <button onClick={this.handleCloseModal}>Sumbit</button>
+                    <Button variant="contained" color="secondary" onClick={this.handleCloseModal}>Sumbit</Button>
                   </Grid>
                 </Grid>
           </Modal>
