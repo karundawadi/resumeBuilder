@@ -29,7 +29,7 @@ function toppart(props) {
                     height:'parent'
                 }
                 //Edit subject and body here 
-            } onClick={()=>{window.open('mailto:karundawadi00@gmaill.com?subject=subject&body=body')}}><IoIosMail size="3em"/></span>
+            } onClick={()=>{window.open(`mailto:${props.userDetailsTransferred.mailingEmail}?subject=Hire Me&body=Please Hire Me`)}}><IoIosMail size="3em"/></span>
             <h2 style={{
                 textAlign:'center',
                 paddingLeft: '15%',
@@ -45,9 +45,9 @@ function toppart(props) {
                 paddingTop:'0.5%',
                 paddingBottom:'0.5%',
             }}>
-                 <SocialIcon url="https://twitter.com/dawadikarun" />
-                 <SocialIcon url="https://www.linkedin.com/in/karundawadi/" />
-                 <SocialIcon url="https://github.com/karundawadi"/>
+                 <SocialIcon url={`${props.userDetailsTransferred.twitterUrl}`} />
+                 <SocialIcon url={`${props.userDetailsTransferred.linkdinUrl}`} />
+                 <SocialIcon url={`${props.userDetailsTransferred.githubUrl}`}/>
             </div>
         </div>
     )
