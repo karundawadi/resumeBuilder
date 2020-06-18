@@ -18,6 +18,11 @@ const topBarStyle = {
 }
 
 function toppart(props) {
+    if(!(props.userDetailsTransferred.firstName === undefined)){
+        document.title= `${props.userDetailsTransferred.firstName+'\' '}resume`;
+    }else{
+        document.title= `Resume builder`;
+    }
     return (
         <div className='TopBar' style={topBarStyle}>
             <span style={
