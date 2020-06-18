@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import TopPart from './components/toppart';
 import BodyPart from './components/bodypart';
-import BottomPart from './components/bottompart';
 import PopUpPart from './components/popuppart'
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
       <PopUpPart onChange = {handleChange} currentState = {displayPopUp}/>
       <TopPart/>
       <BodyPart/>
-      <BottomPart/>
     </React.Fragment>
   );
 }
