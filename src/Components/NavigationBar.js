@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react'
+import React, { Component,useState,useCallback } from 'react'
 import 'fontsource-roboto'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -9,8 +9,9 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import EmailIcon from '@material-ui/icons/Email'
 import { makeStyles} from '@material-ui/core/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
-import { Grid, TextField, Modal } from '@material-ui/core'
+import { Grid, TextField } from '@material-ui/core'
 import EmailIconClicked from './emailPopUp'
+
 
 //Obtained from https://material-ui.com/customization/color/
 const theme = createMuiTheme({
@@ -50,8 +51,7 @@ function NavigationBar(props) {
                             <Grid item xs={2}>
                                 <EmailIcon className={classes.icons} onClick={()=>{
                                     setOpen(true)
-                                    //Learn more about portal here
-                                    console.log("Amifo")
+                                    console.log("Ola 1")
                                 }}>
                                 </EmailIcon>
                             </Grid> 
