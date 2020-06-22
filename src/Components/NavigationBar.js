@@ -6,11 +6,10 @@ import Typography from '@material-ui/core/Typography'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub'
-import EmailIcon from '@material-ui/icons/Email'
 import { makeStyles} from '@material-ui/core/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { Grid, TextField } from '@material-ui/core'
-import EmailIconClicked from './emailPopUp'
+import FromEmailIcon from './emailPopUp'
 
 
 //Obtained from https://material-ui.com/customization/color/
@@ -43,17 +42,14 @@ const useStyles = makeStyles(() => ({
 function NavigationBar(props) {
     const classes = useStyles()
     const [open, setOpen] = useState(false)
+    const [, forceUpdate] = useState()
     return (
         <React.Fragment>
             <AppBar className={classes.root}>
                     <Toolbar>
                         <Grid container spacing={0}>
                             <Grid item xs={2}>
-                                <EmailIcon className={classes.icons} onClick={()=>{
-                                    setOpen(true)
-                                    console.log("Ola 1")
-                                }}>
-                                </EmailIcon>
+                                <FromEmailIcon/>
                             </Grid> 
                             <Grid item xs={7}>
                                 <Typography className={classes.writings} variant="h5">
