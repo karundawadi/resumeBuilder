@@ -46,7 +46,7 @@ class popUpPart extends Component {
     render() {
         return (
             <React.Fragment>
-                <Dialog open={false} fullWidth={true}>
+                <Dialog open={this.state.showDialog} fullWidth={true}>
                 <DialogTitle>
                     Let's get to know you.
                 </DialogTitle>

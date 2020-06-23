@@ -2,8 +2,8 @@ import React,{useState} from 'react';
 import NavigationBar from './Components/NavigationBar'
 import BodyPart from './Components/BodyPart'
 import ShowDialog from './Components/popUpPart'
-import { Button } from '@material-ui/core'
-import ReactToPrint from 'react-to-print';
+//import { Button } from '@material-ui/core'
+// import ReactToPrint from 'react-to-print';
 
 import './App.css';
 
@@ -24,7 +24,7 @@ function AppC() {
   );
 }
 function App(){
-  const componentRef = React.useRef();
+  //const componentRef = React.useRef();
   return(
     <React.Fragment>
       <AppC/>
