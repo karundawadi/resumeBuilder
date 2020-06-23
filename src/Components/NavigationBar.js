@@ -15,12 +15,18 @@ import FromEmailIcon from './emailPopUp'
 //Obtained from https://material-ui.com/customization/color/
 const theme = createMuiTheme({
     palette: {
-      primary: {
-        main: '#26a69a',
-      },
-      secondary: {
-        main: '#66bb6a',
-      },
+        primary: {
+          main: '#26a69a',
+        },
+        secondary: {
+          main: '#66bb6a',
+        },
+        tertiary:{
+          main: '#f7ebeb',
+        },
+        quaternary:{
+          main: '#eef593',
+        },
     },
   });
 

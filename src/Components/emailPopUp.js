@@ -6,7 +6,7 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogActions from '@material-ui/core/DialogActions'
-import { Grid, TextField } from '@material-ui/core'
+import { Grid, TextField, Typography } from '@material-ui/core'
 import EmailIcon from '@material-ui/icons/Email'
 import { Component } from 'react'
 
@@ -54,7 +54,9 @@ class emailPopUp extends Component {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
+                        <Typography variant="body1">
                         Thank you for showing interest in me. Please compose a message to send to me.
+                        </Typography>
                     </DialogContentText>
                     <Grid container spacing={1}>
                     <Grid item xs={6}>
