@@ -48,9 +48,9 @@ class popUpPart extends Component {
                     Let's get to know you.
                 </DialogTitle>
                 <DialogContent>
-                <Grid container spacing ={3}>
+                <Grid container spacing ={1}>
                     <Grid item xs={6}>
-                        <TextField id="firstName" value = {this.state.userDetails.firstName} required label="First Name" onChange={
+                        <TextField id="firstName" value = {this.state.userDetails.firstName} type="text" required label="First Name" onChange={
                             (e)=>{
                                 var items = Object.assign({},this.state.userDetails,{"firstName":`${e.target.value}`})
                                 this.setState({
@@ -60,19 +60,9 @@ class popUpPart extends Component {
                         }/>
                     </Grid>
                     <Grid item xs={6}>
-                        <TextField id="lastName" value = {this.state.userDetails.firstName} required label="Last Name" onChange={
+                        <TextField id="lastName" value = {this.state.userDetails.lastName} type="text" required label="Last Name" onChange={
                             (e)=>{
                                 var items = Object.assign({},this.state.userDetails,{"lastName":`${e.target.value}`})
-                                this.setState({
-                                    userDetails : items
-                                })
-                        }
-                        }/>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <TextField id="email" value = {this.state.userDetails.firstName} required label="Email" onChange={
-                            (e)=>{
-                                var items = Object.assign({},this.state.userDetails,{"email":`${e.target.value}`})
                                 this.setState({
                                     userDetails : items
                                 })
@@ -80,13 +70,24 @@ class popUpPart extends Component {
                         } onBlur={() => this.setState({
                             complete: isValidEmailAddress(this.state.email)})}/>
                     </Grid>
+                    <Grid item xs={12}>
+                        <TextField id="email" value = {this.state.userDetails.email} type="email" required label="Email" onChange={
+                            (e)=>{
+                                var items = Object.assign({},this.state.userDetails,{"email":`${e.target.value}`})
+                                this.setState({
+                                    userDetails : items
+                                })
+                        }
+                        } onBlur={() => this.setState({
+                            complete: isValidEmailAddress(this.state.userDetails.email)})} />
+                    </Grid>
                     <Grid item xs={6}>
-                        <Grid container spacing={1} alignItems="flex-end">
+                        <Grid container spacing={0} alignItems="flex-end">
                         <Grid item>
                             <GitHubIcon />
                         </Grid>
                         <Grid item>
-                            <TextField id="gitHubUrl" value = {this.state.userDetails.firstName} required label="Github username" onChange={
+                            <TextField id="gitHubUrl" value = {this.state.userDetails.gitHubUrl} type="text" required label="Github" onChange={
                             (e)=>{
                                 var items = Object.assign({},this.state.userDetails,{"gitHubUrl":`${e.target.value}`})
                                 this.setState({
@@ -103,7 +104,7 @@ class popUpPart extends Component {
                             <LinkedInIcon />
                         </Grid>
                         <Grid item>
-                            <TextField id="linkdinUrl" value = {this.state.userDetails.firstName} required label="LinkedIn username" onChange={
+                            <TextField id="linkdinUrl" value = {this.state.userDetails.linkdinUrl} type="text" required label="LinkedIn" onChange={
                             (e)=>{
                                 var items = Object.assign({},this.state.userDetails,{"linkdinUrl":`${e.target.value}`})
                                 this.setState({
@@ -120,7 +121,7 @@ class popUpPart extends Component {
                             <TwitterIcon />
                         </Grid>
                         <Grid item>
-                            <TextField id="twitterUrl" value = {this.state.userDetails.firstName} required label="Twitter username" onChange={
+                            <TextField id="twitterUrl" value = {this.state.userDetails.twitterUrl} type="text" required label="Twitter username" onChange={
                             (e)=>{
                                 var items = Object.assign({},this.state.userDetails,{"twitterUrl":`${e.target.value}`})
                                 this.setState({
