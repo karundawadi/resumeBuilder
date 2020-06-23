@@ -49,7 +49,7 @@ function BodyPart() {
             <Grid container spacing={0} className={classes.root}>
                 <Grid item xs={12}>
                     <Paper className={classes.pColor}>
-                        <Typography contenteditable="true" className={classes.headings} variant="h5">Education</Typography>
+                        <Typography className={classes.headings} variant="h5">Education</Typography>
                         <ul className={classes.listHolder}>
                             <li><Typography contenteditable="true" className={classes.lists} variant="subtitle1">[School Name]</Typography></li>
                             <li><Typography contenteditable="true" className={classes.lists} variant="subtitle1">Degree</Typography></li>
@@ -81,7 +81,7 @@ function BodyPart() {
                 </Grid>
                 <Grid item xs = {12}>
                     <Paper className={classes.pColor}>
-                        <Typography contenteditable="true" className={classes.headings}  variant="h5">Awards & Acknowledgements</Typography>
+                        <Typography className={classes.headings}  variant="h5">Awards & Acknowledgements</Typography>
                         <ul className={classes.listHolder}>
                             <li><Typography contenteditable="true" className={classes.lists} variant="subtitle1">First item</Typography></li>
                             <li><Typography contenteditable="true" className={classes.lists} variant="subtitle1">Second item</Typography></li>
@@ -90,7 +90,7 @@ function BodyPart() {
                 </Grid>
                 <Grid item xs = {12}>
                     <Paper className={classes.pColor}>
-                        <Typography contenteditable="true" className={classes.headings} variant="h5">Courses</Typography>
+                        <Typography className={classes.headings} variant="h5">Courses</Typography>
                         <ul className={classes.listHolder}>
                             <li contenteditable="true"><Typography contenteditable="true" className={classes.lists} variant="subtitle1">Course 1</Typography></li>
                             <li contenteditable="true"><Typography contenteditable="true" className={classes.lists} variant="subtitle1">Course 2</Typography></li>
