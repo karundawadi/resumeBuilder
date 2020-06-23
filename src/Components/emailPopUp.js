@@ -97,7 +97,7 @@ class emailPopUp extends Component {
                     <DialogActions>
                     <Grid item xs={1}>
                         <Button variant="contained" disabled={!(this.state.complete)} onClick={()=>{
-                        window.open(`mailto:${this.state.email}?subject=Hiring you in ${this.state.companyName}&body=${this.state.body}`)
+                        window.open(`mailto:${this.props.email}?subject=Hiring you in ${this.state.companyName}&body=${this.state.body}`)
                         this.handleClose()
                     }}>Send</Button>
                     </Grid>

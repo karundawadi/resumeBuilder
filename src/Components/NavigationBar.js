@@ -54,7 +54,7 @@ function NavigationBar(props) {
     }
     else{
         document.title= `${props.userDetails.firstName}/'s resume`
-        nameChecker = <Typography className={classes.writings} variant="h5">`{props.userDetails.firstName}+' '+{props.userDetails.lastName}`</Typography>
+        nameChecker = <Typography className={classes.writings} variant="h5">{props.userDetails.firstName +' '+ props.userDetails.lastName}</Typography>
     }
     return (
         <React.Fragment>
