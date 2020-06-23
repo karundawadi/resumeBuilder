@@ -10,15 +10,6 @@ import { Grid, TextField, Typography } from '@material-ui/core'
 import EmailIcon from '@material-ui/icons/Email'
 import { Component } from 'react'
 
-//For email address check
-//Referred from https://stackoverflow.com/questions/39356826/how-to-check-if-it-a-text-input-has-a-valid-email-format-in-reactjs/39357015 second answer
-function isValidEmailAddress(address) {
-    if(address === undefined){
-        return false;
-    }
-    return !! address.match(/.+@.+/);
-}
-
 //Automatic send button lights after entering correct email 
 class emailPopUp extends Component {
     constructor(props) {
@@ -28,7 +19,6 @@ class emailPopUp extends Component {
              open : this.props.status,
              companyName: '',
              body : '',
-             email: '',
              complete: false,
 
         }
@@ -62,7 +52,7 @@ class emailPopUp extends Component {
                         </Typography>
                     </DialogContentText>
                     <Grid container spacing={1}>
-                    <Grid item xs={6}>
+                    <Grid item xs={12}>
                         <TextField value = {this.state.companyName} autoFocus margin='dense' label="Company Name" type="text" onChange={
                             (e)=>{
                                 this.setState({
@@ -70,14 +60,6 @@ class emailPopUp extends Component {
                                 })
                             }
                         }/>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <TextField  margin='dense' required label="Email" type="email" value ={this.state.email} onChange={
-                            (e)=>this.setState({
-                                email : e.target.value
-                            })
-                        } onBlur={() => this.setState({
-                            complete: isValidEmailAddress(this.state.email)})}/>
                     </Grid>
                     <Grid item xs={12}>
                         <br/>
@@ -96,8 +78,8 @@ class emailPopUp extends Component {
                     </Grid>
                     <DialogActions>
                     <Grid item xs={1}>
-                        <Button variant="contained" disabled={!(this.state.complete)} onClick={()=>{
-                        window.open(`mailto:${this.props.email}?subject=Hiring you in ${this.state.companyName}&body=${this.state.body}`)
+                        <Button variant="contained" onClick={()=>{
+                        window.open(`mailto:${this.props.userDetials.email}?subject=Hiring you in ${this.state.companyName}&body=${this.state.body}`)
                         this.handleClose()
                     }}>Send</Button>
                     </Grid>

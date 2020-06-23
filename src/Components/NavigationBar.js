@@ -62,7 +62,7 @@ function NavigationBar(props) {
                     <Toolbar>
                         <Grid container spacing={0}>
                             <Grid item xs={2}>
-                                <FromEmailIcon status={false}/>
+                                <FromEmailIcon userDetials={props.userDetails} status={false}/>
                             </Grid> 
                             <Grid item xs={7}>
                                     {nameChecker}
