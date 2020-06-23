@@ -16,7 +16,7 @@ function App() {
   return (
     <React.Fragment>
       <ShowDialog showDialog={showDialog} onChange={handleChange}/>
-      <NavigationBar/>
+      <NavigationBar userDetails={userDetails}/>
       <BodyPart/>
     </React.Fragment>
   );

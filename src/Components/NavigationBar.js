@@ -57,7 +57,7 @@ function NavigationBar(props) {
                             </Grid> 
                             <Grid item xs={7}>
                                 <Typography className={classes.writings} variant="h5">
-                                     Karun Dawadi 
+                                    Name
                                 </Typography>
                             </Grid> 
                             <Grid item xs={3}>
