@@ -3,6 +3,7 @@ import { Grid, Paper, Typography, Box } from '@material-ui/core'
 import { makeStyles} from '@material-ui/core/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
 
+
 const theme = createMuiTheme({
     palette: {
       primary: {
@@ -40,6 +41,7 @@ const useStyles = makeStyles(()=>({
         color:'Teal',
     }
 }));
+
 function BodyPart() {
     const classes = useStyles()
     return (

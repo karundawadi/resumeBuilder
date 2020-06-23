@@ -9,6 +9,7 @@ import DialogActions from '@material-ui/core/DialogActions'
 import { Grid, TextField, Typography } from '@material-ui/core'
 import EmailIcon from '@material-ui/icons/Email'
 import { Component } from 'react'
+import HighlightOffSharpIcon from '@material-ui/icons/HighlightOffSharp';
 
 //Automatic send button lights after entering correct email 
 class emailPopUp extends Component {
@@ -44,6 +45,7 @@ class emailPopUp extends Component {
             <Dialog open={this.state.open} >
                 <DialogTitle>
                     Thank you.
+                    <HighlightOffSharpIcon color="error" fontsize="large" onClick={this.handleClose} style={{position:'absolute',left:'83%'}}/>
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
@@ -74,7 +76,7 @@ class emailPopUp extends Component {
                         }/>
                     </Grid>
                     <br/>
-                    <Grid item xs={5}>
+                    <Grid item xs={4}>
                     </Grid>
                     <DialogActions>
                     <Grid item xs={1}>

@@ -68,21 +68,21 @@ function NavigationBar(props) {
                                     {nameChecker}
                             </Grid> 
                             <Grid item xs={3}>
-                                <Grid container spacing={3}>
+                                <Grid container spacing={4}>
                                     <Grid item xs={1}>
-                                        <TwitterIcon className={classes.icons} onClick={()=>{
+                                        <TwitterIcon cursor = 'pointer' className={classes.icons} onClick={()=>{
                                             let url = `http://www.twitter.com/${props.userDetails.twitterUrl}`
                                             window.open(url)
                                         }}></TwitterIcon>
                                     </Grid>
                                     <Grid item xs={1}>
-                                        <LinkedInIcon className={classes.icons} onClick={()=>{
+                                        <LinkedInIcon cursor = 'pointer' className={classes.icons} onClick={()=>{
                                             let url = `http://www.linkedin.com/${props.userDetails.linkdinUrl}`
                                             window.open(url)
                                         }}></LinkedInIcon>
                                     </Grid>
                                     <Grid item xs={1}>
-                                        <GitHubIcon className={classes.icons} onClick={()=>{
+                                        <GitHubIcon cursor = 'pointer' className={classes.icons} onClick={()=>{
                                             let url = `http://www.github.com/${props.userDetails.gitHubUrl}`
                                             window.open(url)
                                         }}></GitHubIcon>

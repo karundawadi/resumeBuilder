@@ -2,7 +2,9 @@ import React,{useState} from 'react';
 import NavigationBar from './Components/NavigationBar'
 import BodyPart from './Components/BodyPart'
 import ShowDialog from './Components/popUpPart'
+import { Button } from '@material-ui/core'
 import './App.css';
+
 
 function App() {
     const [showDialog, setDialog] = useState(true)
@@ -18,6 +20,7 @@ function App() {
       <ShowDialog showDialog={showDialog} onChange={handleChange}/>
       <NavigationBar userDetails={userDetails}/>
       <BodyPart/>
+      <Button>Save</Button>
     </React.Fragment>
   );
 }
