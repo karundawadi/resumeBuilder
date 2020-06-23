@@ -1,4 +1,4 @@
-import React, { Component,useState,useCallback } from 'react'
+import React from 'react'
 import 'fontsource-roboto'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -8,7 +8,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import { makeStyles} from '@material-ui/core/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
-import { Grid, TextField } from '@material-ui/core'
+import { Grid} from '@material-ui/core'
 import FromEmailIcon from './emailPopUp'
 
 
@@ -41,15 +41,13 @@ const useStyles = makeStyles(() => ({
 
 function NavigationBar(props) {
     const classes = useStyles()
-    const [open, setOpen] = useState(false)
-    const [, forceUpdate] = useState()
     return (
         <React.Fragment>
             <AppBar className={classes.root}>
                     <Toolbar>
                         <Grid container spacing={0}>
                             <Grid item xs={2}>
-                                <FromEmailIcon/>
+                                <FromEmailIcon status={false}/>
                             </Grid> 
                             <Grid item xs={7}>
                                 <Typography className={classes.writings} variant="h5">
