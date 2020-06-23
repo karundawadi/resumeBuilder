@@ -4,6 +4,7 @@ import BodyPart from './Components/BodyPart'
 import './App.css';
 
 function App() {
+    document.title("Resume")
   return (
     <React.Fragment>
       <NavigationBar/>
