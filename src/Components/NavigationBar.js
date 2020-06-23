@@ -47,6 +47,15 @@ const useStyles = makeStyles(() => ({
 
 function NavigationBar(props) {
     const classes = useStyles()
+    let nameChecker
+    if (props.userDetails.firstName === undefined){
+        document.title= `Test's resume`
+        nameChecker = <Typography className={classes.writings} variant="h5">Resume Builder</Typography>
+    }
+    else{
+        document.title= `${props.userDetails.firstName}/'s resume`
+        nameChecker = <Typography className={classes.writings} variant="h5">`{props.userDetails.firstName}+' '+{props.userDetails.lastName}`</Typography>
+    }
     return (
         <React.Fragment>
             <AppBar className={classes.root}>
@@ -56,27 +65,25 @@ function NavigationBar(props) {
                                 <FromEmailIcon status={false}/>
                             </Grid> 
                             <Grid item xs={7}>
-                                <Typography className={classes.writings} variant="h5">
-                                    Name
-                                </Typography>
+                                    {nameChecker}
                             </Grid> 
                             <Grid item xs={3}>
                                 <Grid container spacing={3}>
                                     <Grid item xs={1}>
                                         <TwitterIcon className={classes.icons} onClick={()=>{
-                                            let url = "http://www.twitter.com"
+                                            let url = `http://www.twitter.com/${props.userDetails.twitterUrl}`
                                             window.open(url)
                                         }}></TwitterIcon>
                                     </Grid>
                                     <Grid item xs={1}>
                                         <LinkedInIcon className={classes.icons} onClick={()=>{
-                                            let url = "http://www.linkedin.com"
+                                            let url = `http://www.linkedin.com/${props.userDetails.linkdinUrl}`
                                             window.open(url)
                                         }}></LinkedInIcon>
                                     </Grid>
                                     <Grid item xs={1}>
                                         <GitHubIcon className={classes.icons} onClick={()=>{
-                                            let url = "http://www.github.com"
+                                            let url = `http://www.github.com/${props.userDetails.gitHubUrl}`
                                             window.open(url)
                                         }}></GitHubIcon>
                                     </Grid>

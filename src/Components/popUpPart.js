@@ -9,6 +9,9 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
 function isValidEmailAddress(address) {
+    if(address === undefined){
+        return false;
+    }
     return !! address.match(/.+@.+/);
 }
 

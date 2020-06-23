@@ -13,6 +13,9 @@ import { Component } from 'react'
 //For email address check
 //Referred from https://stackoverflow.com/questions/39356826/how-to-check-if-it-a-text-input-has-a-valid-email-format-in-reactjs/39357015 second answer
 function isValidEmailAddress(address) {
+    if(address === undefined){
+        return false;
+    }
     return !! address.match(/.+@.+/);
 }
 
